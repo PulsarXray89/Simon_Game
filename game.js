@@ -50,9 +50,8 @@ function startOver(){
     $("h1").text("Press A Key to Start");
 }
 
-function checkAnswer(currentLevel) {
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-        console.log("success");
+function checkAnswer(userAnswerIndex) {
+    if (gamePattern[userAnswerIndex] === userClickedPattern[userAnswerIndex]) {
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
                 nextSequence();
@@ -65,7 +64,6 @@ function checkAnswer(currentLevel) {
             $("body").removeClass("game-over");
         }, 100)
         startOver();
-        console.log("wrong");
     }
 }
 
